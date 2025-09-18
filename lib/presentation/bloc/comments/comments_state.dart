@@ -1,0 +1,29 @@
+import 'package:equatable/equatable.dart';
+import '../../../domain/entities/comment.dart';
+
+abstract class CommentsState extends Equatable {
+  const CommentsState();
+
+  @override
+  List<Object?> get props => [];
+}
+
+class CommentsLoadInProgress extends CommentsState {}
+
+class CommentsLoadSuccess extends CommentsState {
+  final List<Comment> comments;
+
+  const CommentsLoadSuccess(this.comments);
+
+  @override
+  List<Object?> get props => [comments];
+}
+
+class CommentsLoadFailure extends CommentsState {
+  final String message;
+
+  const CommentsLoadFailure(this.message);
+
+  @override
+  List<Object?> get props => [message];
+}

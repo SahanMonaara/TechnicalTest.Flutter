@@ -6,26 +6,51 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.15.0 <3.0.0"
+  sdk: ">=3.8.0 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  http: 0.13.4
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.20.2
 
   cupertino_icons: ^1.0.2
+
+  # State management
+  flutter_bloc: ^9.1.1
+  equatable: ^2.0.7
+
+  # Dependency Injection
+  get_it: ^8.2.0
+
+  # Networking
+  http: ^1.5.0
+
+  # Local storage
+  shared_preferences: ^2.5.3
+
+  # JSON parsing
+  json_annotation: ^4.9.0
+
+  # Navigations
+  go_router: ^16.2.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
-
-  flutter_lints: ^1.0.0
+  bloc_test: ^10.0.0
+  mocktail: ^1.0.4
+  build_runner: ^2.7.1
+  json_serializable: ^6.11.1
+  flutter_lints: ^6.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter.
 flutter:
-
   uses-material-design: true
+  generate: true
+  assets:
+    - assets/

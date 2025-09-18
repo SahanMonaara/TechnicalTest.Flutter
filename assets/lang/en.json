@@ -1,0 +1,12 @@
+{
+  "app_title": "Posts App",
+  "all_posts": "All Posts",
+  "offline_posts": "Offline Posts",
+  "post_details": "Post Details",
+  "save_offline": "Save Offline",
+  "saved_offline": "Saved Offline",
+  "view_comments": "View Comments",
+  "no_offline_posts": "No offline posts saved.",
+  "no_comments": "No comments found.",
+  "error_loading": "Error loading data"
+}

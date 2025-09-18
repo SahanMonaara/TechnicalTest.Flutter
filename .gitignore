@@ -44,3 +44,11 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Android
+**/local.properties
+
+# iOS
+**/Flutter/Flutter.framework
+**/Flutter/Flutter.podspec
+Pods/

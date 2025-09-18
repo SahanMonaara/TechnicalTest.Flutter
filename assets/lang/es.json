@@ -1,0 +1,12 @@
+{
+  "app_title": "Aplicación de Posts",
+  "all_posts": "Todos los Posts",
+  "offline_posts": "Posts Offline",
+  "post_details": "Detalles del Post",
+  "save_offline": "Guardar Offline",
+  "saved_offline": "Guardado Offline",
+  "view_comments": "Ver Comentarios",
+  "no_offline_posts": "No hay posts guardados.",
+  "no_comments": "No se encontraron comentarios.",
+  "error_loading": "Error cargando datos"
+}
