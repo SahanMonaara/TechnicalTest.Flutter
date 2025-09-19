@@ -3,8 +3,8 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'core/navigation/app_router.dart';
-import 'data/datasources/post_remote_data_source.dart';
-import 'data/datasources/post_local_data_source.dart';
+import 'data/data_sources/post_remote_data_source.dart';
+import 'data/data_sources/post_local_data_source.dart';
 import 'data/repositories/post_repository_impl.dart';
 import 'domain/repositories/post_repository.dart';
 import 'presentation/bloc/posts/posts_bloc.dart';

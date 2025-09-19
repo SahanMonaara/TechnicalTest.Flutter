@@ -1,8 +1,8 @@
 import '../../domain/entities/post.dart';
 import '../../domain/entities/comment.dart';
 import '../../domain/repositories/post_repository.dart';
-import '../datasources/post_remote_data_source.dart';
-import '../datasources/post_local_data_source.dart';
+import '../data_sources/post_remote_data_source.dart';
+import '../data_sources/post_local_data_source.dart';
 import '../models/post_model.dart';
 
 class PostRepositoryImpl implements PostRepository {

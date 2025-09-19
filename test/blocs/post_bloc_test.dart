@@ -7,8 +7,6 @@ import 'package:flutter_tech_task/presentation/bloc/posts/posts_state.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
-
-// Mock repository
 class MockPostRepository extends Mock implements PostRepository {}
 
 void main() {
@@ -25,7 +23,9 @@ void main() {
   blocTest<PostsBloc, PostsState>(
     'emits [PostsLoadInProgress, PostsLoadSuccess] when posts are fetched successfully',
     build: () {
-      when(() => mockRepository.fetchPosts()).thenAnswer((_) async => testPosts);
+      when(
+        () => mockRepository.fetchPosts(),
+      ).thenAnswer((_) async => testPosts);
       return postsBloc;
     },
     act: (bloc) => bloc.add(PostsRequested()),

@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => sl<OfflineBloc>()),
       ],
       child: MaterialApp.router(
-        title: 'Flutter Clean BLoC Demo',
+        title: 'BrightHR Tech test',
         theme: ThemeData(
           primarySwatch: Colors.green,
           appBarTheme: AppBarTheme(
