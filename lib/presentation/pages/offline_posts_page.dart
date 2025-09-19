@@ -22,8 +22,11 @@ class OfflinePostsPage extends StatelessWidget {
         } else if (state is OfflineLoadSuccess) {
           final posts = state.posts;
           if (posts.isEmpty) {
-            return  Center(child: Text(AppLocalizations.of(context)!.translate(
-                'no_offline_posts')));
+            return Center(
+              child: Text(
+                AppLocalizations.of(context)!.translate('no_offline_posts'),
+              ),
+            );
           }
           return ListView.builder(
             itemCount: posts.length,

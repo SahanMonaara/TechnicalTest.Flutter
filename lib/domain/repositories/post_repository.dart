@@ -10,5 +10,7 @@ abstract class PostRepository {
 
   Future<void> savePostOffline(Post post);
 
+  Future<void> removePostOffline(Post post);
+
   Future<List<Post>> fetchOfflinePosts();
 }

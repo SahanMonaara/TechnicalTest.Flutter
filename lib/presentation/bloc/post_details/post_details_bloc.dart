@@ -37,8 +37,7 @@ class PostDetailsBloc extends Bloc<PostDetailsEvent, PostDetailsState> {
         if (!isSaved) {
           await repository.savePostOffline(currentState.post);
         } else {
-          // Optional: implement removal if needed
-          // await repository.removePostFromOffline(currentState.post.id);
+          await repository.removePostOffline(currentState.post);
         }
         emit(currentState.copyWith(isSavedOffline: !isSaved));
       } catch (e) {

@@ -29,4 +29,10 @@ class PostRepositoryImpl implements PostRepository {
 
   @override
   Future<List<Post>> fetchOfflinePosts() async => local.getOfflinePosts();
+
+  @override
+  Future<void> removePostOffline(Post post) async{
+    final model = PostModel(id: post.id, title: post.title, body: post.body);
+    await local.removePost(model);
+  }
 }

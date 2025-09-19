@@ -10,7 +10,10 @@ class PostTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: Text(post.title),
+      title: Text(
+        post.title,
+        style: Theme.of(context).textTheme.titleLarge,
+      ),
       subtitle: Text(
         post.body.length > 50 ? '${post.body.substring(0, 50)}...' : post.body,
       ),

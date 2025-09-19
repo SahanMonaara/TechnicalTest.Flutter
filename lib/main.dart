@@ -32,7 +32,18 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp.router(
         title: 'Flutter Clean BLoC Demo',
-        theme: ThemeData(primarySwatch: Colors.blue),
+        theme: ThemeData(
+          primarySwatch: Colors.green,
+          appBarTheme: AppBarTheme(
+            backgroundColor: Colors.green,
+            foregroundColor: Colors.white,
+          ),
+          tabBarTheme: TabBarThemeData(
+            labelColor: Colors.white,
+            unselectedLabelColor: Colors.white70,
+          ),
+        ),
+
         routerConfig: router,
         localizationsDelegates: const [
           AppLocalizations.delegate,

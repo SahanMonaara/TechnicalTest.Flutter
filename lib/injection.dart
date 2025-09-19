@@ -1,5 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'core/navigation/app_router.dart';
 import 'data/datasources/post_remote_data_source.dart';
@@ -15,6 +16,8 @@ final sl = GetIt.instance;
 
 Future<void> initDependencies() async {
   sl.registerLazySingleton<AppRouter>(() => AppRouter.instance());
+  final sharedPreferences = await SharedPreferences.getInstance();
+  sl.registerLazySingleton<SharedPreferences>(() => sharedPreferences);
   sl.registerLazySingleton(() => http.Client());
   sl.registerLazySingleton<PostRemoteDataSource>(
     () => PostRemoteDataSourceImpl(client: sl()),

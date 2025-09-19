@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../core/localization/app_localization.dart';
+import '../../core/navigation/app_router.dart';
+import '../../injection.dart';
 import '../bloc/offline/offline_bloc.dart';
 import '../bloc/offline/offline_event.dart';
 import '../bloc/post_details/post_details_bloc.dart';
 import '../bloc/post_details/post_details_event.dart';
 import '../bloc/post_details/post_details_state.dart';
-import 'comments_page.dart';
 
 class PostDetailsPage extends StatelessWidget {
   final int postId;
@@ -18,8 +19,9 @@ class PostDetailsPage extends StatelessWidget {
     context.read<PostDetailsBloc>().add(PostDetailsRequested(postId));
 
     return Scaffold(
-      appBar: AppBar(title:  Text(AppLocalizations.of(context)!.translate(
-          'post_details'))),
+      appBar: AppBar(
+        title: Text(AppLocalizations.of(context)!.translate('post_details')),
+      ),
       body: BlocBuilder<PostDetailsBloc, PostDetailsState>(
         builder: (context, state) {
           if (state is PostDetailsLoadInProgress) {
@@ -67,14 +69,13 @@ class PostDetailsPage extends StatelessWidget {
                       const SizedBox(width: 16),
                       ElevatedButton.icon(
                         icon: const Icon(Icons.comment),
-                        label: Text(AppLocalizations.of(context)!.translate(
-                            'view_comments')),
+                        label: Text(
+                          AppLocalizations.of(
+                            context,
+                          )!.translate('view_comments'),
+                        ),
                         onPressed: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (_) => CommentsPage(postId: post.id),
-                            ),
-                          );
+                          sl<AppRouter>().goToComments(context, post.id);
                         },
                       ),
                     ],

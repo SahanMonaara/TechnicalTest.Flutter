@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:  Text(AppLocalizations.of(context)!.translate('app_title')),
+        title: Text(AppLocalizations.of(context)!.translate('app_title')),
         bottom: TabBar(
           controller: _tabController,
           tabs: [

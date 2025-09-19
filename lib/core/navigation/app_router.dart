@@ -7,7 +7,6 @@ import '../../presentation/pages/post_details_page.dart';
 class AppRouter {
   late final GoRouter router;
 
-  // Private singleton constructor
   AppRouter._internal() {
     router = GoRouter(
       initialLocation: '/',
@@ -33,8 +32,8 @@ class AppRouter {
 
   void goHome(BuildContext context) => router.go('/');
 
-  void goToPost(BuildContext context, int postId) => router.go('/post/$postId');
+  void goToPost(BuildContext context, int postId) => router.push('/post/$postId');
 
   void goToComments(BuildContext context, int postId) =>
-      router.go('/post/$postId/comments');
+      router.push('/post/$postId/comments');
 }
